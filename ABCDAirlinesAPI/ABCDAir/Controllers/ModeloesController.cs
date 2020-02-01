@@ -22,16 +22,16 @@ namespace ABCDAir.Controllers
 
         // GET: api/Modeloes
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Modelo>>> GetModelos()
+        public async Task<ActionResult<IEnumerable<Modelo>>> GetModeloAeronave()
         {
-            return await _context.Modelos.ToListAsync();
+            return await _context.ModeloAeronave.ToListAsync();
         }
 
         // GET: api/Modeloes/5
         [HttpGet("{id}")]
         public async Task<ActionResult<Modelo>> GetModelo(string id)
         {
-            var modelo = await _context.Modelos.FindAsync(id);
+            var modelo = await _context.ModeloAeronave.FindAsync(id);
 
             if (modelo == null)
             {
@@ -79,7 +79,7 @@ namespace ABCDAir.Controllers
         [HttpPost]
         public async Task<ActionResult<Modelo>> PostModelo(Modelo modelo)
         {
-            _context.Modelos.Add(modelo);
+            _context.ModeloAeronave.Add(modelo);
             try
             {
                 await _context.SaveChangesAsync();
@@ -103,13 +103,13 @@ namespace ABCDAir.Controllers
         [HttpDelete("{id}")]
         public async Task<ActionResult<Modelo>> DeleteModelo(string id)
         {
-            var modelo = await _context.Modelos.FindAsync(id);
+            var modelo = await _context.ModeloAeronave.FindAsync(id);
             if (modelo == null)
             {
                 return NotFound();
             }
 
-            _context.Modelos.Remove(modelo);
+            _context.ModeloAeronave.Remove(modelo);
             await _context.SaveChangesAsync();
 
             return modelo;
@@ -117,7 +117,7 @@ namespace ABCDAir.Controllers
 
         private bool ModeloExists(string id)
         {
-            return _context.Modelos.Any(e => e.CODE == id);
+            return _context.ModeloAeronave.Any(e => e.CODE == id);
         }
     }
 }

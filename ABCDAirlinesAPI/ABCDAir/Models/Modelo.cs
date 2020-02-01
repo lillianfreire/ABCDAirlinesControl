@@ -11,7 +11,7 @@ namespace ABCDAir.Models
         [Key]
         public string CODE { get; set; }
         public string ALTERNATIVE_CODE { get; set; }
-        public double MAX_DEPARTURE_WEIGHT { get; set; }
-        public double MAX_LANDING_WEIGHT { get; set; }
+        public decimal MAX_DEPARTURE_WEIGHT { get; set; }
+        public decimal MAX_LANDING_WEIGHT { get; set; }
     }
 }
