@@ -7,13 +7,15 @@ import { CadastroAeronaveComponent } from './cadastro-aeronave/cadastro-aeronave
 import { CadastroModeloComponent } from './cadastro-modelo/cadastro-modelo.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './menu/menu.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CadastroAeronaveComponent,
     CadastroModeloComponent,
-    RelatoriosComponent
+    RelatoriosComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
