@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CadastroAeronaveComponent } from './cadastro-aeronave/cadastro-aeronave.component';
 import { CadastroModeloComponent } from './cadastro-modelo/cadastro-modelo.component';
 import { RelatoriosComponent } from './relatorios/relatorios.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RelatoriosComponent } from './relatorios/relatorios.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
