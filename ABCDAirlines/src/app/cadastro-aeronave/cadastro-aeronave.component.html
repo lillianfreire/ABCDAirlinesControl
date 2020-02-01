@@ -1,23 +1,24 @@
 <mat-card>
     <mat-form-field appearance="outline" class="form-field">
         <mat-label>Prefixo</mat-label>
-        <input matInput />
+        <input matInput [(ngModel)]="PREFIX" />
     </mat-form-field>
     <mat-form-field appearance="outline" class="form-field">
         <mat-label>Peso máximo (decolagem)</mat-label>
-        <input matInput />
+        <input matInput [(ngModel)]="MAX_DEPARTURE_WEIGHT" />
     </mat-form-field>
     <mat-form-field appearance="outline" class="form-field">
         <mat-label>Peso máximo (pouso)</mat-label>
-        <input matInput />
+        <input matInput [(ngModel)]="MAX_LANDING_WEIGHT" />
     </mat-form-field>
     <mat-form-field appearance="outline" class="form-field">
         <mat-label>Modelo</mat-label>
         <mat-select>
-            <mat-option>Modelo 1</mat-option>
-            <mat-option>Modelo 2</mat-option>
+            <mat-option *ngFor="let modelo of modelos">
+                {{ modelo.code }}
+            </mat-option>
         </mat-select>
     </mat-form-field>
-    <mat-checkbox>Ativo</mat-checkbox><br>
-    <button mat-flat-button color="primary" class="send">Cadastrar</button>
+    <mat-checkbox [(ngModel)]="ACTIVE">Ativo</mat-checkbox><br>
+    <button mat-flat-button color="primary" class="send" (click)="onSubmit()">Cadastrar</button>
 </mat-card>

@@ -5,7 +5,8 @@ import { Modelo } from "../interfaces/modelo";
 
 const httpOptions = { 
     headers: new HttpHeaders({
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
+        "Access-Control-Allow-Origin": "*"
     })
 }
 
@@ -17,11 +18,11 @@ export class ModeloService {
 
     constructor(private http: HttpClient) {}
 
-    getAeronaves(): Observable<Modelo[]> {
+    getModelos(): Observable<Modelo[]> {
         return this.http.get<Modelo[]>(this.url);
     }
 
-    createAeronave(modelo: Modelo): Observable<Modelo> {
+    createModelo(modelo: Modelo): Observable<Modelo> {
         return this.http.post<Modelo>(this.url, modelo, httpOptions);
     } 
 }
