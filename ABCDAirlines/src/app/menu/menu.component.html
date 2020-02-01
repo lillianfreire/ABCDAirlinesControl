@@ -1,1 +1,31 @@
-<p>menu works!</p>
+<mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <button mat-icon-button (click)="drawer.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>ABCD Airlines</span>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  
+  <mat-drawer-container class="home-container" autosize>
+    <mat-drawer #drawer opened mode="side">
+      <mat-action-list>
+        <button mat-list-item (click)="navigateTo('cadastro-aeronave')">
+          <mat-icon>airplanemode_active</mat-icon>
+          <span>Cadastro de Aeronaves</span>
+        </button>
+        <button mat-list-item (click)="navigateTo('cadastro-modelo')">
+          <mat-icon>track_changes</mat-icon>
+          <span>Cadastro de Modelos</span>
+        </button>
+        <button mat-list-item (click)="navigateTo('relatorios')">
+          <mat-icon>description</mat-icon>
+          <span>Relatórios</span>
+        </button>
+      </mat-action-list>
+    </mat-drawer>
+
+    <router-outlet></router-outlet>
+
+  </mat-drawer-container>
+  
