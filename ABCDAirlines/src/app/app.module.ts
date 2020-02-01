@@ -18,7 +18,9 @@ import {
   MatInputModule,
   MatFormFieldModule,
   MatSidenavModule,
-  MatListModule
+  MatListModule,
+  MatCheckboxModule,
+  MatSelectModule
 } from "@angular/material";
 
 @NgModule({
@@ -41,7 +43,9 @@ import {
     MatFormFieldModule,
     MatInputModule,
     MatSidenavModule,
-    MatListModule
+    MatListModule,
+    MatCheckboxModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
